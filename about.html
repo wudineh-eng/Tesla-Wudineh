@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | TESLA WUDINEH</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #e31e25;
+            --secondary: #0046ad;
+            --dark: #1a1a1a;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--dark);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: button;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .btn:hover {
+            background: #c00;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-top: 20px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        .navigation-wrapper {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            flex-wrap: wrap;
+        }
+
+        .logo-container {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .logo-main {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        .logo-sub {
+            font-size: 0.85rem;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .logo-sub span {
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        .links-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 20px;
+        }
+
+        .nav-link {
+            margin: 0 10px;
+        }
+
+        .nav-link a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-link a i {
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+
+        .nav-link a:hover, .nav-link a.active {
+            background: rgba(227, 30, 37, 0.1);
+            color: var(--primary);
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .contact-item i {
+            background: rgba(227, 30, 37, 0.1);
+            color: var(--primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+        }
+
+        .contact-text .label {
+            font-size: 0.8rem;
+            color: var(--gray);
+        }
+
+        .contact-text .value {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* About Page Content */
+        .about-page {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .about-content {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            padding: 40px;
+            margin-bottom: 50px;
+        }
+
+        .about-history {
+            margin-bottom: 50px;
+        }
+
+        .about-history p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .milestones {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 30px;
+            position: relative;
+        }
+
+        .milestones:before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 80%;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .milestone {
+            width: 45%;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            position: relative;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .milestone:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .milestone:nth-child(odd) {
+            margin-right: auto;
+        }
+
+        .milestone:nth-child(even) {
+            margin-left: auto;
+        }
+
+        .milestone .year {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .milestone .event {
+            font-size: 1.05rem;
+            color: var(--dark);
+        }
+
+        .milestone:after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border-radius: 50%;
+            top: 25px;
+        }
+
+        .milestone:nth-child(odd):after {
+            right: -38px;
+        }
+
+        .milestone:nth-child(even):after {
+            left: -38px;
+        }
+
+        .values {
+            margin-bottom: 50px;
+        }
+
+        .value-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .value-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid var(--light-gray);
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: rgba(227, 30, 37, 0.3);
+        }
+
+        .value-card i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            background: rgba(227, 30, 37, 0.1);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .value-card h4 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .value-card p {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        .team {
+            margin-top: 50px;
+        }
+
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .member {
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .member img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .member:hover img {
+            transform: scale(1.05);
+        }
+
+        .member h4 {
+            font-size: 1.3rem;
+            margin: 20px 0 5px;
+        }
+
+        .member p {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        /* CEO Highlight */
+        .ceo-highlight {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background: var(--primary);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-column p {
+            color: #bbb;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links li a {
+            color: #bbb;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links li a i {
+            margin-right: 10px;
+            color: var(--primary);
+            font-size: 0.8rem;
+        }
+
+        .footer-links li a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid #333;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .navigation-wrapper {
+                flex-direction: column;
+                padding: 20px;
+            }
+            
+            .logo-container {
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            
+            .links-wrapper {
+                margin: 15px 0;
+            }
+            
+            .contact-info {
+                margin-top: 15px;
+            }
+            
+            .milestones:before {
+                left: 10px;
+            }
+            
+            .milestone {
+                width: 90%;
+                margin-left: 40px !important;
+                margin-right: 0 !important;
+            }
+            
+            .milestone:nth-child(odd):after, 
+            .milestone:nth-child(even):after {
+                left: -28px;
+                right: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                padding: 25px;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-item {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .nav-link {
+                margin: 5px;
+            }
+            
+            .nav-link a {
+                font-size: 0.9rem;
+                padding: 6px 10px;
+            }
+            
+            .about-page {
+                padding: 50px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .milestone {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <div class="navigation-wrapper">
+        <div class="logo-container">
+            <div class="logo">
+                <div class="logo-main">TESLA WUDINEH</div>
+                <div class="logo-sub">ELECTRICAL & <span>ELECTRONICS</span> MAINTENANCE</div>
+            </div>
+        </div>
+        
+        <div class="links-wrapper">
+            <div class="nav-link"><a href="index.html"><i class="fas fa-home"></i> Home</a></div>
+            <div class="nav-link"><a href="services.html"><i class="fas fa-bolt"></i> Services</a></div>
+            <div class="nav-link"><a href="about.html" class="active"><i class="fas fa-users"></i> About</a></div>
+            <div class="nav-link"><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></div>
+        </div>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div class="contact-text">
+                    <div class="label">Call Us</div>
+                    <div class="value">+251 972 321 129</div>
+                </div>
+            </div>
+            <a href="contact.html" class="btn">Get Quote</a>
+        </div>
+    </div>
+    
+    <!-- About Page Content -->
+    <section class="about-page">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Tesla Wudineh</h2>
+                <p>Our journey, values, and commitment to excellence</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-history">
+                    <h3>Our History</h3>
+                    <p>Tesla Wudineh Electrical & Electronics Maintenance was founded in 2008 by Wudineh Debebe, a certified electrical engineer with a passion for solving complex electrical challenges. What started as a small workshop in Baty has grown into one of Ethiopia's most trusted electrical service providers.</p>
+                    <p>Over the past 15 years, we've expanded our services to cover residential, commercial, and industrial clients across the country. Our commitment to quality and customer satisfaction has been the driving force behind our growth.</p>
+                    
+                    <div class="milestones">
+                        <div class="milestone">
+                            <div class="year">2008</div>
+                            <div class="event">Founded in Baty with 3 employees</div>
+                        </div>
+                        <div class="milestone">
+                            <div class="year">2012</div>
+                            <div class="event">Expanded to commercial electrical services</div>
+                        </div>
+                        <div class="milestone">
+                            <div class="year">2015</div>
+                            <div class="event">Opened regional office in Hawassa</div>
+                        </div>
+                        <div class="milestone">
+                            <div class="year">2018</div>
+                            <div class="event">Launched solar power division</div>
+                        </div>
+                        <div class="milestone">
+                            <div class="year">2023</div>
+                            <div class="event">Serving clients nationwide with 50+ technicians</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="values">
+                    <h3>Our Core Values</h3>
+                    <div class="value-cards">
+                        <div class="value-card">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Safety First</h4>
+                            <p>We prioritize the safety of our clients, employees, and the public in all our operations.</p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fas fa-gem"></i>
+                            <h4>Quality Workmanship</h4>
+                            <p>We take pride in delivering exceptional quality in every project, big or small.</p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fas fa-handshake"></i>
+                            <h4>Customer Focus</h4>
+                            <p>Our clients are at the heart of everything we do, from initial consultation to after-service support.</p>
+                        </div>
+                        <div class="value-card">
+                            <i class="fas fa-lightbulb"></i>
+                            <h4>Innovation</h4>
+                            <p>We embrace new technologies and methods to provide cutting-edge solutions.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team">
+                    <h3>Our Leadership Team</h3>
+                    <div class="team-members">
+                        <div class="member">
+                            <div class="ceo-highlight">CEO & FOUNDER</div>
+                            <img src="images/DSC_0019 (2).JPG" alt="Wudineh debebe">
+                            <h4>Wudineh Debebe</h4>
+                            <p>Founder & CEO</p>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Sara Alemayehu">
+                            <h4>Sara Alemayehu</h4>
+                            <p>Operations Director</p>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="member">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Daniel Mekonnen">
+                            <h4>Daniel Mekonnen</h4>
+                            <p>Technical Manager</p>
+                            <div class="social-icons">
+                                <a href="#"><i class="fab fa-linkedin"></i></a>
+                                <a href="#"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>TESLA WUDINEH</h3>
+                    <p>Providing top-quality electrical and electronics maintenance services since 2008. Our team of certified professionals ensures your systems are safe, efficient, and reliable.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/wudineh.debebe"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/wudineh?t=Tp2DYRGpgHr3hAp43nICqQ&s=09"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/wudineh-debebe-b69ba120?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/wudinehdebebe?igsh=YzljYTk1ODg3Zg=="><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://maps.app.goo.gl/94BDRJFkzZHDfuo7A"><i class="fas fa-map-marker-alt"></i> Baty, Halememaya Wereda, Ethiopia</a></li>
+                        <li><a href="tel:+251972321129"><i class="fas fa-phone"></i> +251 972 321 129</a></li>
+                        <li><a href="mailto:info@teslawudineh.com"><i class="fas fa-envelope"></i> info@teslawudineh.com</a></li>
+                        <li><a href="#"><i class="fas fa-clock"></i> Mon-Sat: 8:00 AM - 6:00 PM</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 TESLA WUDINEH Electrical & Electronics Maintenance. All Rights Reserved.
+        </div>
+    </footer>
+    
+    <script>
+        // Simple script for smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add hover effect to team members
+        const teamMembers = document.querySelectorAll('.member');
+        teamMembers.forEach(member => {
+            member.addEventListener('mouseenter', () => {
+                member.querySelector('img').style.transform = 'scale(1.05)';
+            });
+            
+            member.addEventListener('mouseleave', () => {
+                member.querySelector('img').style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
